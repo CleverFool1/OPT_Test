@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<br>
+{{data}}
+<br>
+hello word
+<br>
+{{data.name}}
+<br>
+{{data['age']}}
+<br>
+mylist:{{data.mylist}}
+<br>
+count:{{data.mylist[2]+data.mylist[3]}}
+<br>
+<!--过滤器设置-->
+{{'first_flask6'| upper}}
+{{'first_flask6'| title}}
+{{'first_flask6'|replace('first','hi')}}
+<!--自定义过滤器的设置-->
+<br>
+mylist列表:{{data.mylist | li}}
+
+</body>
+</html>
