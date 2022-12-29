@@ -215,6 +215,7 @@ class GA(object):
         return [bestindividual, bestfitness]
 
     def plot(self, results):
+        plt.ion()
         X = []
         Y = []
 
@@ -223,6 +224,7 @@ class GA(object):
             Y.append(results[i][0])
 
         plt.plot(X, Y)
+
         plt.show()
 
     def main(self):
@@ -248,7 +250,10 @@ class GA(object):
         results = results[1:]
         results.sort()
         print(results)
+
         self.plot(results)
+        plt.ioff()
+        print(results[])
 
 
 if __name__ == '__main__':

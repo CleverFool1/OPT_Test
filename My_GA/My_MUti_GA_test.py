@@ -86,7 +86,7 @@ def mutation(child, MUTATION_RATE=0.003):
         child[mutate_point] = child[mutate_point] ^ 1  # 将变异点的二进制为反转
 
 
-def select(pop, fitness):  # nature selection wrt pop's fitness
+def select(pop, fitness):  # nature selection wrt pop's fitness  自然选择WRT pop的适应性
     idx = np.random.choice(np.arange(POP_SIZE), size=POP_SIZE, replace=True,
                            p=(fitness) / (fitness.sum()))
     return pop[idx]
@@ -107,7 +107,7 @@ def print_info(pop):
 if __name__ == "__main__":
     fig = plt.figure()
     ax = plt.axes(projection='3d')
-    plt.ion()  # 将画图模式改为交互模式，程序遇到plt.show不会暂停，而是继续执行
+    # plt.ion()  # 将画图模式改为交互模式，程序遇到plt.show不会暂停，而是继续执行
     plot_3d(ax)
 
     pop = np.random.randint(2, size=(POP_SIZE, DNA_SIZE * length))  # matrix (POP_SIZE, DNA_SIZE)
@@ -126,5 +126,5 @@ if __name__ == "__main__":
         pop = select(pop, fitness)  # 选择生成新的种群
 
     print_info(pop)
-    plt.ioff()
+    # plt.ioff()
     plot_3d(ax)
